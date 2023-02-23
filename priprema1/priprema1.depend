@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1606037962 source:d:\ii godina\objektno programiranje\vezbanje\priprema1\dinstring.cpp
+	"dinstring.hpp"
+
+1606037962 d:\ii godina\objektno programiranje\vezbanje\priprema1\dinstring.hpp
+	<iostream>
+
+1608986563 source:d:\ii godina\objektno programiranje\vezbanje\priprema1\main.cpp
+	<iostream>
+	"video.hpp"
+	"videolist.hpp"
+	"ytplaylist.hpp"
+
+1608983356 d:\ii godina\objektno programiranje\vezbanje\priprema1\video.hpp
+	"dinstring.hpp"
+
+1608983420 d:\ii godina\objektno programiranje\vezbanje\priprema1\videolist.hpp
+	"dinstring.hpp"
+	"video.hpp"
+	"list.hpp"
+
+1607180100 d:\ii godina\objektno programiranje\vezbanje\priprema1\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1608984908 d:\ii godina\objektno programiranje\vezbanje\priprema1\youtube.hpp
+	"videolist.hpp"
+	<iomanip>
+
+1608986586 d:\ii godina\objektno programiranje\vezbanje\priprema1\ytplaylist.hpp
+	"videolist.hpp"
+	<iomanip>
+

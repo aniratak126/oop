@@ -1,0 +1,68 @@
+#ifndef YOUTUBE_HPP_INCLUDED
+#define YOUTUBE_HPP_INCLUDED
+#include "videolist.hpp"
+#include <iomanip>
+using namespace std;
+
+class YoutubePlaylist : public VideoList {
+private:
+    DinString nazivPlayliste;
+    DinString nazivAutora;
+public:
+    YoutubePlaylist() {nazivAutora=""; nazivPlayliste="";}
+    YoutubePlaylist(const DinString& np, const DinString& na) : nazivPlayliste(np), nazivAutora(na) {}
+    int najduziVideo() const {
+        if(listaVidea.empty()) return -1;
+        Video v;
+        int pom=0;
+        int ret;
+        for(int i=1; i<=listaVidea.size(); i++)
+        {
+            listaVidea.read(i, v);
+            if(v.getTrajanje()>pom)
+            {
+                pom=v.getTrajanje();
+                ret=i;
+            }
+        }
+        return ret;
+    }
+    double prosek() {
+        Video v;
+        int pom=0;
+        for(int i=1; i<=listaVidea.size(); i++)
+        {
+            listaVidea.read(i, v);
+            pom+=v.getTrajanje();
+        }
+        return pom/listaVidea.size();
+    }
+    friend ostream& operator<<(ostream& out, const YoutubePlaylist& yt)
+    {
+        out<<"YOUTUBE PLAYLIST: "<<yt.nazivPlayliste<<endl;
+        out<<"Autor: "<<yt.nazivAutora<<endl;
+        Video v;
+        int pom=0;
+        for(int i=1; i<=yt.listaVidea.size(); i++)
+        {
+            yt.listaVidea.read(i, v);
+            pom+=v.getTrajanje();
+        }
+        double prosek = pom/yt.listaVidea.size();
+        for(int i=1; i<=yt.listaVidea.size(); i++)
+        {
+            cout<<yt.listaVidea.size()<<"****************"<<endl;
+            yt.listaVidea.read(i, v);
+            if(v.getTrajanje() > prosek)
+            {
+                out<<setw(8)<<"Video: "<<v.getNaziv()<<endl;
+                out<<setw(8)<<"Trajanje: "<<v.getTrajanje()<<endl;
+                out<<setw(8)<<"Rezolucija videa: "<<v.getRezolucija()<<endl;
+            }
+        }
+        out<<"Najduzi video je na indeksu: "<<yt.najduziVideo();
+        return out;
+    }
+};
+#endif // YOUTUBE_HPP_INCLUDED
+

@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1606037962 source:d:\ii godina\objektno programiranje\vezbanje\priprema2\dinstring.cpp
+	"dinstring.hpp"
+
+1606037962 d:\ii godina\objektno programiranje\vezbanje\priprema2\dinstring.hpp
+	<iostream>
+
+1608813014 source:d:\ii godina\objektno programiranje\vezbanje\priprema2\main.cpp
+	<iostream>
+	"autobus.hpp"
+	"parking.hpp"
+
+1608808833 d:\ii godina\objektno programiranje\vezbanje\priprema2\autobus.hpp
+	"vozilo.hpp"
+	"dinstring.hpp"
+
+1608808157 d:\ii godina\objektno programiranje\vezbanje\priprema2\vozilo.hpp
+	"dinstring.hpp"
+
+1608813276 d:\ii godina\objektno programiranje\vezbanje\priprema2\parking.hpp
+	"dinstring.hpp"
+	"list.hpp"
+	"autobus.hpp"
+
+1607180100 d:\ii godina\objektno programiranje\vezbanje\priprema2\list.hpp
+	<stdlib.h>
+	<iostream>
+
